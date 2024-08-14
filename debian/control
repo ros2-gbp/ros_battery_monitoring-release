@@ -1,0 +1,12 @@
+Source: ros-jazzy-battery-state-broadcaster
+Section: misc
+Priority: optional
+Maintainer: Jonas Otto <jonas.otto@ipa.fraunhofer.de>
+Build-Depends: debhelper (>= 9.0.0), ros-jazzy-ament-cmake, ros-jazzy-controller-interface, ros-jazzy-pluginlib, ros-jazzy-realtime-tools, ros-jazzy-sensor-msgs, ros-jazzy-ros-workspace
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-jazzy-battery-state-broadcaster
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-jazzy-controller-interface, ros-jazzy-pluginlib, ros-jazzy-realtime-tools, ros-jazzy-sensor-msgs, ros-jazzy-ros-workspace
+Description: ROS2 Control boradcaster for battery state sensors.
