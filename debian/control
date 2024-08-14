@@ -1,0 +1,12 @@
+Source: ros-rolling-battery-state-rviz-overlay
+Section: misc
+Priority: optional
+Maintainer: Jonas Otto <jonas.otto@ipa.fraunhofer.de>
+Build-Depends: debhelper (>= 9.0.0), libfmt-dev, ros-rolling-ament-cmake, ros-rolling-rclcpp, ros-rolling-rviz-2d-overlay-msgs, ros-rolling-sensor-msgs, ros-rolling-ros-workspace
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-rolling-battery-state-rviz-overlay
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libfmt-dev, ros-rolling-rclcpp, ros-rolling-rviz-2d-overlay-msgs, ros-rolling-sensor-msgs, ros-rolling-ros-workspace
+Description: Converts BatteryState messages to RViz OverlayText messages.
