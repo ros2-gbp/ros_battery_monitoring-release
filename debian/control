@@ -1,0 +1,12 @@
+Source: ros-iron-battery-state-rviz-overlay
+Section: misc
+Priority: optional
+Maintainer: Jonas Otto <jonas.otto@ipa.fraunhofer.de>
+Build-Depends: debhelper (>= 9.0.0), libfmt-dev, ros-iron-ament-cmake, ros-iron-rclcpp, ros-iron-rviz-2d-overlay-msgs, ros-iron-sensor-msgs, ros-iron-ros-workspace
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-iron-battery-state-rviz-overlay
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libfmt-dev, ros-iron-rclcpp, ros-iron-rviz-2d-overlay-msgs, ros-iron-sensor-msgs, ros-iron-ros-workspace
+Description: Converts BatteryState messages to RViz OverlayText messages.
