@@ -1,1 +1,1 @@
-{"base": "eb8d933", "parent": "debian/rolling/battery_state_broadcaster", "previous": "8cc5e43", "trim": "", "trimbase": ""}
+{"base": "55ba9d2b5da3", "parent": "debian/kilted/battery_state_broadcaster", "previous": "e102bc2a1eb0", "trim": "", "trimbase": ""}
