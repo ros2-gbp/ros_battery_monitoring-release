@@ -1,1 +1,1 @@
-{"base": "7bd821e", "parent": "debian/rolling/battery_state_rviz_overlay", "previous": "7e29b49", "trim": "", "trimbase": ""}
+{"base": "d0a91500a87d", "parent": "debian/kilted/battery_state_rviz_overlay", "previous": "f65a741d58ff", "trim": "", "trimbase": ""}
