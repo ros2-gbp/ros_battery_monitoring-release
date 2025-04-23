@@ -1,0 +1,15 @@
+ros-kilted-battery-state-broadcaster (1.0.1-2bookworm) bookworm; urgency=high
+
+  * fix realtime_tools include
+  * Contributors: Jonas Otto
+
+ -- Jonas Otto <jonas.otto@ipa.fraunhofer.de>  Thu, 06 Feb 2025 06:00:00 -0000
+
+ros-kilted-battery-state-broadcaster (1.0.0-2bookworm) bookworm; urgency=high
+
+  * initial release
+  * Contributors: Jonas Otto
+
+ -- Jonas Otto <jonas.otto@ipa.fraunhofer.de>  Wed, 14 Aug 2024 05:00:00 -0000
+
+
