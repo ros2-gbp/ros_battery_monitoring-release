@@ -1,0 +1,21 @@
+ros-rolling-battery-state-rviz-overlay (1.0.2-1bookworm) bookworm; urgency=high
+
+  * Replace ament_target_dependencies with target_link_libraries ([#6](https://github.com/ipa320/ros_battery_monitoring/issues/6))
+  * Contributors: Alejandro Hernandez Cordero, Jonas Otto
+
+ -- Jonas Otto <jonas.otto@ipa.fraunhofer.de>  Sat, 31 May 2025 22:00:00 -0000
+
+ros-rolling-battery-state-rviz-overlay (1.0.1-1bookworm) bookworm; urgency=high
+
+
+
+ -- Jonas Otto <jonas.otto@ipa.fraunhofer.de>  Wed, 05 Feb 2025 23:00:00 -0000
+
+ros-rolling-battery-state-rviz-overlay (1.0.0-1bookworm) bookworm; urgency=high
+
+  * initial release
+  * Contributors: Jonas Otto
+
+ -- Jonas Otto <jonas.otto@ipa.fraunhofer.de>  Tue, 13 Aug 2024 22:00:00 -0000
+
+
