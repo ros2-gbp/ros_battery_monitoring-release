@@ -1,0 +1,12 @@
+Source: ros-kilted-battery-state-broadcaster
+Section: misc
+Priority: optional
+Maintainer: Jonas Otto <jonas.otto@ipa.fraunhofer.de>
+Build-Depends: debhelper (>= 9.0.0), ros-kilted-ament-cmake, ros-kilted-controller-interface, ros-kilted-pluginlib, ros-kilted-realtime-tools, ros-kilted-sensor-msgs, ros-kilted-ros-workspace
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-kilted-battery-state-broadcaster
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-kilted-controller-interface, ros-kilted-pluginlib, ros-kilted-realtime-tools, ros-kilted-sensor-msgs, ros-kilted-ros-workspace
+Description: ROS2 Control boradcaster for battery state sensors.
