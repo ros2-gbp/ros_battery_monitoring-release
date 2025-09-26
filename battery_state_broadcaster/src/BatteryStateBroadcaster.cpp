@@ -18,7 +18,7 @@ BatteryStateBroadcaster::on_configure(const rclcpp_lifecycle::State& /*previous_
 {
   std::string sensor_name = get_node()->get_parameter("sensor_name").as_string();
 
-  battery_sensor_ = std::make_unique<BatterySensor>(BatterySensor(sensor_name));
+  battery_sensor_ = std::make_unique<BatterySensor>(sensor_name);
 
   battery_state_pub_ =
       get_node()->create_publisher<sensor_msgs::msg::BatteryState>("~/battery_state", rclcpp::SystemDefaultsQoS());
@@ -84,11 +84,12 @@ BatteryStateBroadcaster::on_deactivate(const rclcpp_lifecycle::State& /*previous
 controller_interface::return_type BatteryStateBroadcaster::update(const rclcpp::Time& time,
                                                                   const rclcpp::Duration& /*period*/)
 {
-  if (realtime_publisher_ && realtime_publisher_->trylock())
+  if (realtime_publisher_)
   {
-    realtime_publisher_->msg_.header.stamp = time;
-    battery_sensor_->get_values_as_message(realtime_publisher_->msg_);
-    realtime_publisher_->unlockAndPublish();
+    sensor_msgs::msg::BatteryState msg_;
+    msg_.header.stamp = time;
+    battery_sensor_->get_values_as_message(msg_);
+    realtime_publisher_->try_publish(msg_);
   }
 
   return controller_interface::return_type::OK;
