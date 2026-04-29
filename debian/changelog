@@ -1,0 +1,37 @@
+ros-lyrical-battery-state-broadcaster (1.2.0-3trixie) trixie; urgency=high
+
+  * Fix compile error with latest realtime_tools #12 <https://github.com/ipa320/ros_battery_monitoring/issues/12>
+  * Contributors: Jonas Otto, Michal Sojka
+
+ -- Jonas Otto <jonas.otto@ipa.fraunhofer.de>  Wed, 21 Jan 2026 06:00:00 -0000
+
+ros-lyrical-battery-state-broadcaster (1.1.0-3trixie) trixie; urgency=high
+
+  * address deprecations in ros2_control for kilted
+  * Don't make a temporary copy of semantic component (https://github.com/ipa320/ros_battery_monitoring/pull/9)
+  * Contributors: Christoph Froehlich, Jonas Otto
+
+ -- Jonas Otto <jonas.otto@ipa.fraunhofer.de>  Fri, 26 Sep 2025 05:00:00 -0000
+
+ros-lyrical-battery-state-broadcaster (1.0.2-3trixie) trixie; urgency=high
+
+  * Replace ament_target_dependencies with target_link_libraries ([#6](https://github.com/ipa320/ros_battery_monitoring/issues/6))
+  * Contributors: Alejandro Hernandez Cordero, Jonas Otto
+
+ -- Jonas Otto <jonas.otto@ipa.fraunhofer.de>  Sun, 01 Jun 2025 05:00:00 -0000
+
+ros-lyrical-battery-state-broadcaster (1.0.1-3trixie) trixie; urgency=high
+
+  * fix realtime_tools include
+  * Contributors: Jonas Otto
+
+ -- Jonas Otto <jonas.otto@ipa.fraunhofer.de>  Thu, 06 Feb 2025 06:00:00 -0000
+
+ros-lyrical-battery-state-broadcaster (1.0.0-3trixie) trixie; urgency=high
+
+  * initial release
+  * Contributors: Jonas Otto
+
+ -- Jonas Otto <jonas.otto@ipa.fraunhofer.de>  Wed, 14 Aug 2024 05:00:00 -0000
+
+
