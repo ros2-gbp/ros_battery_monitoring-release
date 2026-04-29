@@ -105,4 +105,5 @@ tracks:
     ros_distro: rolling
     vcs_type: git
     vcs_uri: https://github.com/ipa320/ros_battery_monitoring.git
-    version: :{auto}
+    version: 1.2.0
+    version_saved: :{auto}
