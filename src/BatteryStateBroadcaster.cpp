@@ -18,34 +18,34 @@ BatteryStateBroadcaster::on_configure(const rclcpp_lifecycle::State& /*previous_
 {
   std::string sensor_name = get_node()->get_parameter("sensor_name").as_string();
 
-  battery_sensor_ = std::make_unique<BatterySensor>(BatterySensor(sensor_name));
+  battery_sensor_ = std::make_unique<BatterySensor>(sensor_name);
 
   battery_state_pub_ =
       get_node()->create_publisher<sensor_msgs::msg::BatteryState>("~/battery_state", rclcpp::SystemDefaultsQoS());
   realtime_publisher_ =
       std::make_unique<realtime_tools::RealtimePublisher<sensor_msgs::msg::BatteryState>>(battery_state_pub_);
 
-  realtime_publisher_->msg_.temperature = std::numeric_limits<double>::quiet_NaN();
-  realtime_publisher_->msg_.current = std::numeric_limits<double>::quiet_NaN();
-  realtime_publisher_->msg_.charge = std::numeric_limits<double>::quiet_NaN();
-  realtime_publisher_->msg_.capacity = std::numeric_limits<double>::quiet_NaN();
-  realtime_publisher_->msg_.design_capacity = std::numeric_limits<double>::quiet_NaN();
-  realtime_publisher_->msg_.percentage = std::numeric_limits<double>::quiet_NaN();
-  realtime_publisher_->msg_.power_supply_status = sensor_msgs::msg::BatteryState::POWER_SUPPLY_STATUS_UNKNOWN;
-  realtime_publisher_->msg_.power_supply_health = sensor_msgs::msg::BatteryState::POWER_SUPPLY_HEALTH_UNKNOWN;
-  realtime_publisher_->msg_.power_supply_technology = sensor_msgs::msg::BatteryState::POWER_SUPPLY_TECHNOLOGY_UNKNOWN;
-  realtime_publisher_->msg_.present = true;
+  msg_.temperature = std::numeric_limits<double>::quiet_NaN();
+  msg_.current = std::numeric_limits<double>::quiet_NaN();
+  msg_.charge = std::numeric_limits<double>::quiet_NaN();
+  msg_.capacity = std::numeric_limits<double>::quiet_NaN();
+  msg_.design_capacity = std::numeric_limits<double>::quiet_NaN();
+  msg_.percentage = std::numeric_limits<double>::quiet_NaN();
+  msg_.power_supply_status = sensor_msgs::msg::BatteryState::POWER_SUPPLY_STATUS_UNKNOWN;
+  msg_.power_supply_health = sensor_msgs::msg::BatteryState::POWER_SUPPLY_HEALTH_UNKNOWN;
+  msg_.power_supply_technology = sensor_msgs::msg::BatteryState::POWER_SUPPLY_TECHNOLOGY_UNKNOWN;
+  msg_.present = true;
 
   int64_t psu_tech = get_node()->get_parameter("power_supply_technology").as_int();
   if (psu_tech != -1)
   {
-    realtime_publisher_->msg_.power_supply_technology = psu_tech;
+    msg_.power_supply_technology = psu_tech;
   }
 
   double design_capacity = get_node()->get_parameter("design_capacity").as_double();
   if (design_capacity != 0.0)
   {
-    realtime_publisher_->msg_.design_capacity = static_cast<float>(design_capacity);
+    msg_.design_capacity = static_cast<float>(design_capacity);
   }
 
   return CallbackReturn::SUCCESS;
@@ -84,11 +84,11 @@ BatteryStateBroadcaster::on_deactivate(const rclcpp_lifecycle::State& /*previous
 controller_interface::return_type BatteryStateBroadcaster::update(const rclcpp::Time& time,
                                                                   const rclcpp::Duration& /*period*/)
 {
-  if (realtime_publisher_ && realtime_publisher_->trylock())
+  if (realtime_publisher_)
   {
-    realtime_publisher_->msg_.header.stamp = time;
-    battery_sensor_->get_values_as_message(realtime_publisher_->msg_);
-    realtime_publisher_->unlockAndPublish();
+    msg_.header.stamp = time;
+    battery_sensor_->get_values_as_message(msg_);
+    realtime_publisher_->try_publish(msg_);
   }
 
   return controller_interface::return_type::OK;
