@@ -1,3 +1,28 @@
+## ros_battery_monitoring (jazzy) - 1.2.0-1
+
+The packages in the `ros_battery_monitoring` repository were released into the `jazzy` distro by running `/usr/bin/bloom-release --rosdistro jazzy --override-release-repository-url https://github.com/ros2-gbp/ros_battery_monitoring-release.git --override-release-repository-push-url git@github.com:ros2-gbp/ros_battery_monitoring-release.git ros_battery_monitoring` on `Sat, 16 May 2026 16:40:20 -0000`
+
+These packages were released:
+- `battery_state_broadcaster`
+- `battery_state_rviz_overlay`
+
+Version of package(s) in repository `ros_battery_monitoring`:
+
+- upstream repository: https://github.com/ipa320/ros_battery_monitoring.git
+- release repository: https://github.com/ros2-gbp/ros_battery_monitoring-release.git
+- rosdistro version: `1.0.2-1`
+- old version: `1.0.2-1`
+- new version: `1.2.0-1`
+
+Versions of tools used:
+
+- bloom version: `0.14.3`
+- catkin_pkg version: `1.1.0`
+- rosdep version: `0.26.0`
+- rosdistro version: `1.0.1`
+- vcstools version: `0.1.42`
+
+
 ## ros_battery_monitoring (kilted) - 1.2.0-1
 
 The packages in the `ros_battery_monitoring` repository were released into the `kilted` distro by running `/usr/bin/bloom-release --rosdistro kilted --override-release-repository-url https://github.com/ros2-gbp/ros_battery_monitoring-release.git --override-release-repository-push-url git@github.com:ros2-gbp/ros_battery_monitoring-release.git ros_battery_monitoring` on `Wed, 21 Jan 2026 20:20:24 -0000`
