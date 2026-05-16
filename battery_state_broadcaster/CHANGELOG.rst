@@ -2,6 +2,18 @@
 Changelog for package battery_state_broadcaster
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+1.2.0 (2026-01-21)
+------------------
+
+* Fix compile error with latest realtime_tools `#12 <https://github.com/ipa320/ros_battery_monitoring/issues/12>`_
+* Contributors: Jonas Otto, Michal Sojka
+
+1.1.0 (2025-09-26)
+------------------
+* address deprecations in ros2_control for kilted
+* Don't make a temporary copy of semantic component (https://github.com/ipa320/ros_battery_monitoring/pull/9)
+* Contributors: Christoph Froehlich, Jonas Otto
+
 1.0.2 (2025-06-01)
 ------------------
 * Replace ament_target_dependencies with target_link_libraries ([#6](https://github.com/ipa320/ros_battery_monitoring/issues/6))
